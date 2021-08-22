@@ -1,3 +1,4 @@
+// BASE STYLES
 *,
 *::before,
 *::after {
@@ -6,42 +7,67 @@
    box-sizing: border-box;
 }
 
-html {
+body {
   font-family: 'Manrope', sans-serif;
   line-height: 1.5;
-  background: #ddd;
+  background: #ECF2F8;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-}
+// 
+
+// VARIABLES
 
 $font-color-dark: #48556A;
 $font-color-light: #6E8098;
-$bg-light: #ccc;
+$bg-light: #ECF2F8;
+$bg-dark: #6E8098;
+
+// MODAL COLORS
+$modal-bg: #48556A;
+$modal-text-color: #9DAEC2;
+$modal-icon-color: #ECF2F8;
+
+// FONT STACK
+
+$font-family: 'Manrope', sans-serif;
+
+$font-weight-extra-light: 200; 
+$font-weight-light: 300; 
+$font-weight-normal: 400; 
+$font-weight-medium: 500; 
+$font-weight-bold: 700; 
+
+
+$mobile-width: 420px;
+
+// ARTICLE COMPONENT
 
 .article-preview {
-  overflow: hidden;
   background: #fff;
   display: flex;
+  position: relative;
   height: 280px;
   width: 730px;
   border-radius: 10px;
   margin: 100px auto;
-  box-shadow:  0 40px -10px #666;
-
+  box-shadow:  0 5px 10px $bg-dark;
+  
   &__media {
     width: 100%;
-    overflow: hidden;
-     
+    max-width: 280px;
+    height: auto;
+
     img {
-      width: 305px;
+      display: block;
       height: 100%;
-      background-size: cover;
+      width: 100%;
+      max-width: 300px;
     }
   }
-
+  
   &__content {
+    padding: 20px;
+    width: 100%;
     padding: 20px 30px;
   }
 
@@ -49,7 +75,7 @@ $bg-light: #ccc;
     font-size: 20px;
     letter-spacing: 1.2px;
     color: $font-color-dark;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .article-preview__body {
@@ -64,9 +90,10 @@ $bg-light: #ccc;
 
   .article-preview__avatar {
     display: flex;
+    position: relative;
   }
 
-  .article-preview__avatar__media img{
+  .article-preview__avatar__media img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -75,8 +102,8 @@ $bg-light: #ccc;
   .article-preview__avatar__name {
     display: flex;
     flex-direction: column;
+    flex-basis: 100%;
     margin-left: 12px;
-    align-items: center;
 
     h5 {
       color: $font-color-dark;
@@ -84,28 +111,122 @@ $bg-light: #ccc;
     }
     p {
       color: $font-color-light;
+      font-size: 13px;
       font-weight: 100;
     }
   }
 
   .article-preview__cta {
-    
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background: $bg-light;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0px 2px 4px #000;
+    transition: all .5ms ease-in;
 
     i {
-      background: $bg-light;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      color: $font-color-dark;
+      color: $font-color-light;
       font-size: 18px;
-      line-height: 30px;
-      text-align: center;
+      line-height: 32px;
+    }
+    &.active {
+      background: $bg-dark;
+
+      i {
+        color: $modal-icon-color;
+      }
+    }
+  }
+
+  //SHARE MODAL 
+  .share-modal {
+    background: $modal-bg;
+    color: $modal-text-color;
+    height: 55px;
+    width: 100%;
+    max-width: 248px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 100;
+    top: 44%;
+    right: -66px;
+    display: none;
+    opacity: 0;
+    box-shadow: 0 2px 4px #000;
+   
+    &.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    &__list {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      max-width: 175px;
+      margin: 0 auto;
+
+      &__header {
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 5px;
+        font-weight: $font-weight-light;
+      }
+
+      i {
+        color: $modal-icon-color;
+        font-size: 22px;
+        vertical-align: text-top;
+      }
+    }
+    &::after {
+      background-color: $modal-bg;
+      content: '';
+      height: 22px;
+      width: 22px;
+      position: absolute;
+      top: 98%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg); 
     }
   }
 }
 
+@media (max-width: $mobile-width) {
+  .article-preview {
+    flex-direction: column;
+    width: 85%;
+    height: auto;
+
+    &__content {
+      padding: 10px 15px;
+    }
+  }
+  
+  
+
+
+
+
+
+  .attribution {
+    display: none;
+  }
+}
 
 
 // add classes
-.attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+.attribution { 
+   font-size: 11px; 
+   text-align: center; 
+
+   a { 
+     color: hsl(228, 45%, 44%); 
+   }
+ }    

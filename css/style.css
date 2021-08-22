@@ -7,42 +7,42 @@
           box-sizing: border-box;
 }
 
-html {
+body {
   font-family: 'Manrope', sans-serif;
   line-height: 1.5;
-  background: #ddd;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+  background: #ECF2F8;
 }
 
 .article-preview {
-  overflow: hidden;
   background: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   height: 280px;
   width: 730px;
   border-radius: 10px;
   margin: 100px auto;
-  -webkit-box-shadow: 0 40px -10px #666;
-          box-shadow: 0 40px -10px #666;
+  -webkit-box-shadow: 0 5px 10px #6E8098;
+          box-shadow: 0 5px 10px #6E8098;
 }
 
 .article-preview__media {
   width: 100%;
-  overflow: hidden;
+  max-width: 280px;
+  height: auto;
 }
 
 .article-preview__media img {
-  width: 305px;
+  display: block;
   height: 100%;
-  background-size: cover;
+  width: 100%;
+  max-width: 300px;
 }
 
 .article-preview__content {
+  padding: 20px;
+  width: 100%;
   padding: 20px 30px;
 }
 
@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 20px;
   letter-spacing: 1.2px;
   color: #48556A;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .article-preview .article-preview__body {
@@ -69,6 +69,7 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 
 .article-preview .article-preview__avatar__media img {
@@ -85,10 +86,9 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
   margin-left: 12px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .article-preview .article-preview__avatar__name h5 {
@@ -98,18 +98,118 @@ h1, h2, h3, h4, h5, h6 {
 
 .article-preview .article-preview__avatar__name p {
   color: #6E8098;
+  font-size: 13px;
   font-weight: 100;
 }
 
-.article-preview .article-preview__cta i {
-  background: #ccc;
-  width: 30px;
-  height: 30px;
+.article-preview .article-preview__cta {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  background: #ECF2F8;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  color: #48556A;
-  font-size: 18px;
-  line-height: 30px;
   text-align: center;
+  -webkit-box-shadow: 0px 2px 4px #000;
+          box-shadow: 0px 2px 4px #000;
+  -webkit-transition: all .5ms ease-in;
+  transition: all .5ms ease-in;
+}
+
+.article-preview .article-preview__cta i {
+  color: #6E8098;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.article-preview .article-preview__cta.active {
+  background: #6E8098;
+}
+
+.article-preview .article-preview__cta.active i {
+  color: #ECF2F8;
+}
+
+.article-preview .share-modal {
+  background: #48556A;
+  color: #9DAEC2;
+  height: 55px;
+  width: 100%;
+  max-width: 248px;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 100;
+  top: 44%;
+  right: -66px;
+  display: none;
+  opacity: 0;
+  -webkit-box-shadow: 0 2px 4px #000;
+          box-shadow: 0 2px 4px #000;
+}
+
+.article-preview .share-modal.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+}
+
+.article-preview .share-modal__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  max-width: 175px;
+  margin: 0 auto;
+}
+
+.article-preview .share-modal__list__header {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 5px;
+  font-weight: 300;
+}
+
+.article-preview .share-modal__list i {
+  color: #ECF2F8;
+  font-size: 22px;
+  vertical-align: text-top;
+}
+
+.article-preview .share-modal::after {
+  background-color: #48556A;
+  content: '';
+  height: 22px;
+  width: 22px;
+  position: absolute;
+  top: 98%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+@media (max-width: 420px) {
+  .article-preview {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 85%;
+    height: auto;
+  }
+  .article-preview__content {
+    padding: 10px 15px;
+  }
+  .attribution {
+    display: none;
+  }
 }
 
 .attribution {
