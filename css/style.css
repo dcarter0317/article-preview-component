@@ -1,0 +1,123 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.5;
+  background: #ddd;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+.article-preview {
+  overflow: hidden;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 280px;
+  width: 730px;
+  border-radius: 10px;
+  margin: 100px auto;
+  -webkit-box-shadow: 0 40px -10px #666;
+          box-shadow: 0 40px -10px #666;
+}
+
+.article-preview__media {
+  width: 100%;
+  overflow: hidden;
+}
+
+.article-preview__media img {
+  width: 305px;
+  height: 100%;
+  background-size: cover;
+}
+
+.article-preview__content {
+  padding: 20px 30px;
+}
+
+.article-preview .article-preview__header {
+  font-size: 20px;
+  letter-spacing: 1.2px;
+  color: #48556A;
+  margin-bottom: 20px;
+}
+
+.article-preview .article-preview__body {
+  color: #6E8098;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.article-preview .article-preview__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.article-preview .article-preview__avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.article-preview .article-preview__avatar__media img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.article-preview .article-preview__avatar__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.article-preview .article-preview__avatar__name h5 {
+  color: #48556A;
+  font-size: 14px;
+}
+
+.article-preview .article-preview__avatar__name p {
+  color: #6E8098;
+  font-weight: 100;
+}
+
+.article-preview .article-preview__cta i {
+  background: #ccc;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #48556A;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+/*# sourceMappingURL=style.css.map */
