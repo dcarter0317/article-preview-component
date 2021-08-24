@@ -110,7 +110,7 @@ img {
 .article-preview .article-preview__cta {
   position: absolute;
   z-index: 200;
-  bottom: 40px;
+  bottom: 25px;
   right: 40px;
   background: #ECF2F8;
   width: 3.2em;
@@ -242,7 +242,7 @@ img {
     margin-left: 20px;
   }
   .article-preview .article-preview__cta {
-    bottom: 15px;
+    bottom: 16px;
     right: 25px;
     width: 2.5em;
     height: 2.5em;
